@@ -5,13 +5,13 @@ package com.etatech.downloaderapp
  ***************************************************/
 class FeedEntery {
     var name: String = ""
-    var author:String = ""
-    var date :String = ""
+    var artist:String = ""
+    var releaseDate :String = ""
     var summary : String = ""
-    var imgUrl : String = ""
+    var image : String = ""
 
     override fun toString(): String {
-        return "FeedEntery(name='$name', author='$author', date='$date', summary='$summary', imgUrl='$imgUrl')"
+        return "FeedEntery(name='$name', artist='$artist', releaseDate='$releaseDate', summary='$summary', image='$image')"
     }
 
 
