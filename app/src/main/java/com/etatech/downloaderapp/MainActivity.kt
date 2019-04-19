@@ -12,6 +12,10 @@ import java.net.HttpURLConnection
 import java.net.MalformedURLException
 import java.net.URL
 
+/////////////////////////////////////////////////////
+//Created by Fady Fouad on 2019-04-19 at 09:26 PM.//
+///////////////////////////////////////////////////
+
 class MainActivity : AppCompatActivity() {
 
     private val TAG = "MainActivity"
@@ -55,16 +59,19 @@ class MainActivity : AppCompatActivity() {
                     val inputStreamReader = InputStreamReader(inputStream)
                     val reader = BufferedReader(inputStreamReader)
 
-                    var inputBuffer = CharArray(500)
-                    var charRead = 0
-                    while (charRead>=0){
-                        charRead = reader.read(inputBuffer)
-                        if (charRead>0){
-                            xmlResult.append(String(inputBuffer,0,charRead))
-                        }
-                    }
-                    reader.close()
+//                    var inputBuffer = CharArray(500)
+//                    var charRead = 0
+//                    while (charRead>=0){
+//                        charRead = reader.read(inputBuffer)
+//                        if (charRead>0){
+//                            xmlResult.append(String(inputBuffer,0,charRead))
+//                        }
+//                    }
+//                    reader.close()
 
+                    connection.inputStream.buffered().reader().use { reader ->
+                        xmlResult.append(reader.readText())
+                    }
                     Log.d(TAG,"Recived ${xmlResult.length} bytes")
                     return xmlResult.toString()
                 }catch (e: MalformedURLException){
