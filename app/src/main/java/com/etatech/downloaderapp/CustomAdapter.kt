@@ -1,6 +1,9 @@
 package com.etatech.downloaderapp
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +27,10 @@ class CustomAdapter (val items : ArrayList<FeedEntery>, val context: Context) : 
         return items.size
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun onBindViewHolder(p0: CustomViewHolder, p1: Int) {
 
         p0.appNameTV.text = items.get(p1).name
@@ -39,7 +46,8 @@ class CustomAdapter (val items : ArrayList<FeedEntery>, val context: Context) : 
 
 
         val item: FeedEntery = items[p1]
-        p0.bind(items[p1])
+        p0.bind(items[p1],items.get(p1).id)
+
 
 //        p0.parent_layout.setOnClickListener {
 //            event.invoke(getAdapterPosition(), getItemViewType())
@@ -67,12 +75,16 @@ class CustomViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         return this
     }
 
-    fun bind(feedEntery: FeedEntery) {
+    fun bind(feedEntery: FeedEntery,url:String) {
         parent_layout.setOnClickListener(View.OnClickListener {
             if(subItems.visibility==View.GONE) {
                 subItems.visibility = View.VISIBLE
             }else
                 subItems.visibility = View.GONE
+        })
+        appIcon.setOnClickListener(View.OnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            itemView.context.startActivity(intent)
         })
     }
 

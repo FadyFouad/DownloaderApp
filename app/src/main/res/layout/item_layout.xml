@@ -11,7 +11,7 @@
             android:textSize="16sp"
             android:id="@+id/appName_tv"
             android:textColor="#000"
-            android:layout_below="@id/item_divider"
+            android:layout_alignParentTop="true"
             android:text="Application Name "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,28 +20,27 @@
             android:padding="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="4dp"/>
 
     <ImageView
             android:id="@+id/appIcon"
             android:src="@drawable/ic_android"
-            android:layout_below="@id/item_divider"
+            android:layout_alignParentTop="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:layout_marginTop="8dp"
             android:layout_alignParentRight="true"/>
 
     <View
             android:layout_width="wrap_content"
             android:layout_height="2dp"
-            android:layout_alignParentTop="true"
             android:layout_marginTop="8dp"
             android:background="#D3D3D3"
+            android:layout_below="@id/subItems"
             android:id="@+id/item_divider"/>
 
     <LinearLayout
@@ -58,7 +57,6 @@
                 android:textSize="16dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -68,7 +66,6 @@
                 android:textSize="16dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -78,7 +75,6 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

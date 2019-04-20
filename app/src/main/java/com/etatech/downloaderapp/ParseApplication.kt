@@ -62,6 +62,9 @@ class ParseApplication {
                                 "image"->{
                                     currentRecord.image = textValue
                                 }
+                                "id"->{
+                                    currentRecord.id = textValue
+                                }
 
                             }
                         }
