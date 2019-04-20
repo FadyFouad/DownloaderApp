@@ -23,7 +23,7 @@ class CustomAdapter (val items : ArrayList<FeedEntery>, val context: Context) : 
 
     override fun onBindViewHolder(p0: CustomViewHolder, p1: Int) {
 
-        p0?.itemTV?.text = items.get(p1).toString()
+        p0?.itemTV?.text = items.get(p1).name
 
     }
 
