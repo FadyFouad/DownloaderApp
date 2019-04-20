@@ -1,17 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:textSize="16sp"
-        android:id="@+id/item_tv"
         android:text="Some Test Texts "
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/parent_layout"
         android:padding="8dp">
 
-</TextView>
+    <TextView
+            android:textSize="16sp"
+            android:id="@+id/appName_tv"
+            android:textColor="#000"
+            android:layout_below="@id/item_divider"
+            android:text="Application Name "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:padding="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+    <ImageView
+            android:id="@+id/appIcon"
+            android:src="@drawable/ic_android"
+            android:layout_below="@id/item_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_alignParentRight="true"/>
+
+    <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:background="#D3D3D3"
+            android:id="@+id/item_divider"/>
+
+    <LinearLayout
+            android:id="@+id/subItems"
+            android:layout_below="@id/appIcon"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/artistTV"
+                android:text="artist"
+                android:textSize="16dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/releaseDateTV"
+                android:text="Release Date"
+                android:textSize="16dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/summaryTV"
+                android:text="Summary"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

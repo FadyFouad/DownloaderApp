@@ -60,7 +60,7 @@ class ParseApplication {
                                     currentRecord.summary = textValue
                                 }
                                 "image"->{
-
+                                    currentRecord.image = textValue
                                 }
 
                             }
