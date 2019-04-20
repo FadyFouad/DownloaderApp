@@ -28,7 +28,7 @@ class ParseApplication {
             var currentRecord = FeedEntery()
             while (eventType != XmlPullParser.END_DOCUMENT ){
 
-                val tagName = xpp.name.toLowerCase()
+                val tagName = xpp.name?.toLowerCase()
                 when (eventType){
                     XmlPullParser.START_TAG->{
                         Log.d(TAG,"Parse Starting -> $tagName")
