@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.ArrayAdapter
@@ -38,11 +39,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private class DownloadData(context: Context,recyclerView :ListView) : AsyncTask<String, Void, String>(){
+        private class DownloadData(context: Context,recyclerView :RecyclerView) : AsyncTask<String, Void, String>(){
             private val TAG = "DownloadData"
 
             var proContext:Context by Delegates.notNull()
-            var propRV:ListView by Delegates.notNull()
+            var propRV:RecyclerView by Delegates.notNull()
 
             init {
                 proContext = context
@@ -67,9 +68,11 @@ class MainActivity : AppCompatActivity() {
 
                 var items:ArrayList<FeedEntery> = ArrayList()
                 items.add(FeedEntery())
-                val arrayAdapter = ArrayAdapter<FeedEntery>(proContext,R.layout.item_layout,parseApplication.applications)
-//                val arrayAdapter = CustomAdapter(items,proContext)
+//                val arrayAdapter = ArrayAdapter<FeedEntery>(proContext,R.layout.item_layout,parseApplication.applications)
+                val arrayAdapter = CustomAdapter(parseApplication.applications,proContext)
                 propRV.adapter=arrayAdapter
+                propRV.layoutManager = LinearLayoutManager(proContext)
+                propRV.setHasFixedSize(true)
             }
             private fun downloadXML(s: String?): String {
                 val xmlResult = StringBuilder()
